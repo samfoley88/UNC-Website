@@ -2,6 +2,26 @@
 <html dir="ltr" lang="en-US">
 
 <head>
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-55N9LFM');</script>
+	<!-- End Google Tag Manager -->
+	<!-- Re-set google consent if allowCookies cookie is set -->
+	<script>
+	if (document.cookie.includes("acceptCookies=true")) {
+		// have cookie
+		dataLayer.push({'event': 'accept-cookies'})
+	   } else {
+		// no cookie
+	   }
+	</script>
+	<!-- End re-set google consent if allowCookies cookie is set -->
 	<!-- Document Meta
     ============================================= -->
 	<meta charset="utf-8">
@@ -10,7 +30,7 @@
 	<meta name="author" content="zytheme">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="UniFi Hosting">
-	<link href="assets/images/favicon/favicon.png" rel="icon">
+	<link href="assets/images/favicon/favicon.ico" rel="icon">
 
 	<!-- Fonts
     ============================================= -->
@@ -19,10 +39,12 @@
 	<!-- Stylesheets
     ============================================= -->
 	<link href="assets/css/external.css" rel="stylesheet">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">	
-<!--<link href="assets/css/style.css" rel="stylesheet">-->
-<link rel="stylesheet/less" type="text/css" href="assets/less/style.less">
-<script src="assets/js/less.js"></script>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Taken from https://github.com/Wruczek/Bootstrap-Cookie-Alert -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+	<!--<link href="assets/css/style.css" rel="stylesheet">-->
+	<link rel="stylesheet/less" type="text/css" href="assets/less/style.less">
+	<script src="assets/js/less.js"></script>
 
 
 
@@ -38,6 +60,38 @@
 </head>
 
 <body class="body-scroll">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55N9LFM" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- START Bootstrap-Cookie-Alert -->
+	<div class="alert text-center cookiealert" role="alert">
+		<b>Do you like cookies?</b> &#x1F36A; We use cookies to help us see when people are visiting our site and what
+		they are looking at. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+
+		<button type="button" class="btn btn-primary btn-sm acceptcookies"
+			onclick="dataLayer.push({'event': 'accept-cookies'});">
+			I agree
+		</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+	<!-- END Bootstrap-Cookie-Alert -->
+
+	<!-- START Custom Styles -->
+	<style>
+		.strike {
+			text-decoration: line-through;
+			font-weight: 100!important;
+			color: rgb(78, 76, 76)!important;
+			font-size: 50px!important;
+		}
+		.footnote-asterisk {
+			vertical-align: super;
+			font-size: 30px;
+		}
+	</style>
+	<!-- END Custom Styles -->
+
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="wrapper clearfix">
@@ -49,17 +103,20 @@
 			<nav id="primary-menu" class="navbar navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					
-						<a class="logo" href="index.php">
-						<img class="logo-dark" src="assets/images/logo/logo-dark.png" alt="appy Logo" width="300" height="62">
-						<img class="logo-light" src="assets/images/logo/logo-light.png" alt="appy Logo" width="300" height="62">
-					</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<a class="logo" href="/">
+							<img class="logo-dark" src="assets/images/logo/logo-dark.png" alt="appy Logo" width="300"
+								height="62">
+							<img class="logo-light" src="assets/images/logo/logo-light.png" alt="appy Logo" width="300"
+								height="62">
+						</a>
 					</div>
 					<div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
 						<ul class="nav navbar-nav nav-pos-right navbar-left nav-split">
@@ -68,6 +125,8 @@
 							<li><a data-scroll="scrollTo" href="#feature1">Features</a>
 							</li>
 							<li><a data-scroll="scrollTo" href="#pricing">Pricing</a>
+							</li>
+							<li><a data-scroll="scrollTo" href="/faq">FAQ</a>
 							</li>
 							<li><a data-scroll="scrollTo" href="#contact">Contact</a>
 							</li>
@@ -89,8 +148,10 @@
 				<div class="container">
 					<div class="row row-content mt-30">
 						<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-1 pt-100">
-							<div class="slide--headline">Streamline Your Network with <span class="typed-text" data-typed-string="UniFi Hosting"></span> </div>
-							<div class="slide--bio">A Robust UniFi Controller that is Fully Managed, Monitored, and Resilient</div>
+							<div class="slide--headline">Streamline Your Network with <span class="typed-text"
+									data-typed-string="UniFi Hosting"></span> </div>
+							<div class="slide--bio">A Robust UniFi Controller that is Fully Managed, Monitored, and
+								Resilient</div>
 							<div class="slide--action">
 								<a class="btn btn--primary btn--rounded" href="#pricing">Sign Up</a>
 							</div>
@@ -109,7 +170,7 @@
 
 		</section>
 		<!-- #slider end -->
-		
+
 		<!-- Feature #1
 		============================================= -->
 		<section id="feature1" class="section feature text-center bg-white">
@@ -118,7 +179,8 @@
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
 							<h2 class="heading--title">UniFiCentral Features</h2>
-							<p class="heading--desc">A UniFiCentral Controller offers identical functionalities to that of an on-premise controller, such as CloudKey or UDM <strong>PLUS:</strong> </p>
+							<p class="heading--desc">A UniFiCentral Controller offers identical functionalities to that
+								of an on-premise controller, such as CloudKey or UDM <strong>PLUS:</strong> </p>
 							<div class="divider--line divider--center"></div>
 						</div>
 					</div>
@@ -134,7 +196,8 @@
 							</div>
 							<div class="feature--content">
 								<h3>24/7 Monitoring</h3>
-								<p>Our team provides continuous monitoring of your UniFiCentral Controller, ensuring its availability and security every hour of every day, all year round.</p>
+								<p>Our team provides continuous monitoring of your UniFiCentral Controller, ensuring its
+									availability and security every hour of every day, all year round.</p>
 							</div>
 						</div>
 						<!-- .feature-panel end -->
@@ -149,7 +212,8 @@
 							</div>
 							<div class="feature--content">
 								<h3>Streamlined Management</h3>
-								<p>With a UniFiCentral Controller, you can manage an unlimited number of sites, streamlining your network management and reducing hardware costs.</p>
+								<p>With a UniFiCentral Controller, you can manage an unlimited number of sites,
+									streamlining your network management and reducing hardware costs.</p>
 							</div>
 						</div>
 						<!-- .feature-panel end -->
@@ -164,7 +228,8 @@
 							</div>
 							<div class="feature--content">
 								<h3>Updates & Backups</h3>
-								<p>Your UniFiCentral Controller is automatically updated, and a complete Controller backup is taken every evening for both your protection and peace of mind.</p>
+								<p>Your UniFiCentral Controller is automatically updated, and a complete Controller
+									backup is taken every evening for both your protection and peace of mind.</p>
 							</div>
 						</div>
 						<!-- .feature-panel end -->
@@ -176,7 +241,7 @@
 			<!-- .container end -->
 		</section>
 		<!-- #feature2 end -->
-	
+
 		<!-- Feature #2
 		============================================= -->
 		<section id="feature2" class="section feature feature-2">
@@ -187,7 +252,8 @@
 							<i class="lnr lnr-laptop-phone"></i>
 							<div class="divider--line"></div>
 							<h2 class="">Multi-Platform Support</h2>
-							<p class="">You can access your UniFiCentral Controller through the web or Ubiquiti UniFi mobile apps (iOS & Android).</p>
+							<p class="">You can access your UniFiCentral Controller through the web or Ubiquiti UniFi
+								mobile apps (iOS & Android).</p>
 						</div>
 					</div><!-- .col-md-6 end -->
 					<div class="col-xs-12 col-sm-6 col-md-7 wow fadeInUp">
@@ -209,7 +275,7 @@
 				</div><!-- .row end -->
 			</div><!-- .container end -->
 		</section>
-	
+
 
 		<!-- Pricing Table #1
 		============================================= -->
@@ -219,7 +285,9 @@
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
 							<h2 class="heading--title">UniFiCentral Pricing</h2>
-							<p class="heading--desc">If you need a customised solution, we are pleased to offer tailor-made packages based on your requirements. <a data-scroll="scrollTo" href="#contact">Contact Us.</a></p>
+							<p class="heading--desc">If you need a customised solution, we are pleased to offer
+								tailor-made packages based on your requirements. <a data-scroll="scrollTo"
+									href="#contact">Contact Us.</a></p>
 							<div class="divider--line divider--center"></div>
 						</div>
 					</div>
@@ -235,7 +303,8 @@
 							<div class="pricing--heading text--center">
 								<h4>Package 1</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">$</span>49</p>
+									<p class="strike"><span class="currency strike">$</span>39</s></p>
+									<p><span class="currency">$</span>31.20<span class="footnote-asterisk">*</span></p>
 									<div class="pricing--desc">
 										per month
 									</div>
@@ -245,11 +314,12 @@
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 50 Devices</li>
+									<li>Up to 30 UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
-								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/14kfZd3QY4dA6ju7sv">Sign Up</a>
+								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/4gw5kz2MUh0m6judQZ?prefilled_promo_code=20off">Sign Up</a>
 							</div>
 							<!--  Pricing Body  -->
 						</div>
@@ -264,7 +334,8 @@
 							<div class="pricing--heading text--center">
 								<h4>Package 2</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">$</span>79</p>
+									<p class="strike"><span class="currency strike">$</span>79</s></p>
+									<p><span class="currency">$</span>63.20<span class="footnote-asterisk">*</span></p>
 									<div class="pricing--desc">
 										per month
 									</div>
@@ -274,11 +345,13 @@
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 100 Devices</li>
+									<li>Up to 100 UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
-								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/cN2fZdbjqfWi23e6os">Sign Up</a>
+								<a class="btn btn--secondary btn--bordered btn--rounded"
+									href="https://buy.stripe.com/cN2fZdbjqfWi23e6os?prefilled_promo_code=20off">Sign Up</a>
 							</div>
 							<!--  Pricing Body  -->
 						</div>
@@ -293,7 +366,8 @@
 							<div class="pricing--heading text--center">
 								<h4>Package 3</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">$</span>109</p>
+									<p class="strike"><span class="currency strike">$</span>109</s></p>
+									<p><span class="currency">$</span>87.20<span class="footnote-asterisk">*</span></p>
 									<div class="pricing--desc">
 										per month
 									</div>
@@ -303,17 +377,19 @@
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 250 Devices</li>
+									<li>Up to 250 UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
-								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/cN26oDevCdOagY89AF">Sign Up</a>
+								<a class="btn btn--secondary btn--bordered btn--rounded"
+									href="https://buy.stripe.com/cN26oDevCdOagY89AF?prefilled_promo_code=20off">Sign Up</a>
 							</div>
 							<!--  Pricing Body  -->
 						</div>
 					</div>
 					<!-- .pricing-table End -->
-					
+
 					<!-- Pricing Packge #4
 					============================================= -->
 					<div class=" col-xs-12 col-sm-4 col-md-4 price-table wow fadeInUp" data-wow-duration="1s">
@@ -322,7 +398,8 @@
 							<div class="pricing--heading text--center">
 								<h4>Package 4</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">$</span>139</p>
+									<p class="strike"><span class="currency strike">$</span>139</s></p>
+									<p><span class="currency">$</span>111.20<span class="footnote-asterisk">*</span></p>
 									<div class="pricing--desc">
 										per month
 									</div>
@@ -332,17 +409,19 @@
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 500 Devices</li>
+									<li>Up to 500 UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
-								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/aEU28n9bih0mdLW5kq">Sign Up</a>
+								<a class="btn btn--secondary btn--bordered btn--rounded"
+									href="https://buy.stripe.com/aEU28n9bih0mdLW5kq?prefilled_promo_code=20off">Sign Up</a>
 							</div>
 							<!--  Pricing Body  -->
 						</div>
 					</div>
 					<!-- .pricing-table End -->
-					
+
 					<!-- Pricing Packge #5
 					============================================= -->
 					<div class=" col-xs-12 col-sm-4 col-md-4 price-table wow fadeInUp" data-wow-duration="1s">
@@ -351,7 +430,8 @@
 							<div class="pricing--heading text--center">
 								<h4>Package 5</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">$</span>199</p>
+									<p class="strike"><span class="currency strike">$</span>199</s></p>
+									<p><span class="currency">$</span>159.20<span class="footnote-asterisk">*</span></p>
 									<div class="pricing--desc">
 										per month
 									</div>
@@ -361,36 +441,43 @@
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 1,000 Devices</li>
+									<li>Up to 1,000 UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
-								<a class="btn btn--secondary btn--bordered btn--rounded" href="https://buy.stripe.com/fZe6oD9bi5hEdLWcMT">Sign Up</a>
+								<a class="btn btn--secondary btn--bordered btn--rounded"
+									href="https://buy.stripe.com/fZe6oD9bi5hEdLWcMT?prefilled_promo_code=20off">Sign Up</a>
 							</div>
 							<!--  Pricing Body  -->
 						</div>
 					</div>
 					<!-- .pricing-table End -->
-					
+
 					<!-- Pricing Packge #6
 					============================================= -->
 					<div class=" col-xs-12 col-sm-4 col-md-4 price-table wow fadeInUp" data-wow-duration="1s">
 						<div class="pricing-panel">
 							<!--  Pricing heading  -->
 							<div class="pricing--heading text--center">
-								<h4>Package 6</h4>
+								<h4>Enterprise Package</h4>
 								<div class="pricing--heading">
-									<p><span class="currency">-</span></p>
-									<div class="pricing--desc">
-										per month
-									</div>
+									<p style="
+    line-height: 0.5;
+    margin-bottom: 0.7em;
+    margin-top: -0.03em;
+"><span class="currency" style="
+    font-size: 0.6em;
+">Contact Sales</span></p>
+
 								</div>
 							</div>
 							<!--  Pricing body  -->
 							<div class="pricing--body">
 								<ul class="list-unstyled">
 									<li>Unlimited Sites</li>
-									<li>Up to 1,000+ Devices</li>
+									<li>Up to 1,000+ UniFi Devices</li>
+									<li>Unlimited Client Devices</li>
 									<li>24/7 Monitoring</li>
 									<li>Updates & Backups</li>
 								</ul>
@@ -400,61 +487,122 @@
 						</div>
 					</div>
 					<!-- .pricing-table End -->
-					
 				</div>
-				<!-- .row end -->
-			</div>
-			<!-- .container end -->
-		</section>
-		<!-- #pricing1 end -->
-		
-		
-		<!-- Contact #1
-		============================================= -->
-		<section id="contact" class="section">
-			<div class="container">
-				<div class="row clearfix">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-						<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">Contact Us</h2>
-							<p class="heading--desc">If you need any assistance or have questions, please e-mail <a href="mailto:helpdesk@UnifiCentral.app">helpdesk@unificentral.app</a>.</p>
-							<div class="divider--line divider--center"></div>
-						</div>
-					</div>
-					<!-- .col-md-6 end -->
-				</div>
+				<p style="font-size:1.5em">* discount applies for first 3 months</p>
 				<!-- .row end -->
 			</div>
 			<!-- .container end -->
 		</section>
 		<!-- #pricing1 end -->
 
-
-		<!-- Footer 
+		<!-- Feature #2
 		============================================= -->
-		<footer id="footer" class="footer footer-5">
-			<!-- Copyrights
-			============================================= -->
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6">
-						<div class="footer--copyright">
-							<span>&copy; 2023 UniFiCentral</span>
-						</div>
-					</div><!-- .col-md-6 end -->
+		<section id="feature2" class="section feature feature-2">
+			<div class="container text-center">
+				<div class="wow fadeInUp" data-wow-duration="1s">
+					<i class="lnr lnr-laptop-phone"></i>
+					<div class="divider--line divider--center"></div>
+					<h2 class="">Managed Network Services</h2>
+					<p class="">Our Managed Network service goes a step further than a managed controller and provides
+						full management and support for all your UniFi equipment.</p>
+					<p class="">Let our expert technical team manage everything for you, just tell us what you need and
+						we will make it happen!</p>
+					<p class=""><b>$15<small>/access point</small></b> and <b>$40<small>/switch (or gateway)</small></b>
+						<small>per month</small></p>
+					<p class=""><small>$40 monthly minimum.</small></p>
+					<a class="btn btn--secondary btn--bordered btn--rounded"
+						href="https://buy.stripe.com/9AQ4gv9bidOa6jucMU">Sign Up</a> <a
+						class="btn btn--secondary btn--bordered btn--rounded" href="#contact">Contact Us</a>
+				</div>
+			</div><!-- .col-md-6 end -->
 
-				</div><!-- .row end -->
+	</div><!-- .row end -->
+
+	<!-- .container end -->
+	</section>
+	<!-- #feature2 end -->
+
+
+	<!-- Contact #1
+		============================================= -->
+	<section id="contact" class="section">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+					<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
+						<h2 class="heading--title">Contact Us</h2>
+						<p class="heading--desc">If you need any assistance or have questions, please e-mail <a
+								href="mailto:helpdesk@UnifiCentral.app">helpdesk@unificentral.app</a>.</p>
+						<div class="divider--line divider--center"></div>
+					</div> 
+				</div>
+				<!-- .col-md-6 end -->
 			</div>
-			<!-- .container end -->
-		</footer>
+			<!-- .row end -->
 		</div>
-		<!-- #wrapper end -->
+		<!-- .container end -->
+	</section>
+	<!-- #pricing1 end -->
 
-		<!-- Footer Scripts
+	<!-- Discount banner from https://shkspr.mobi/blog/2021/09/pure-css-corner-banner/ -->
+	<!-- A diagonal discount banner in the top right handside of the screen offering 20% off using code "20off" -->
+	<hr id="offer" aria-label="20% Discount">
+	<style>
+		#offer {
+			float: left;
+			top: 1.5em;
+			right: -3em;
+			position: fixed; /* or fixed if you want it to always be visible */
+			transform: rotate(45deg);
+			background: #5584ff;
+			color: white;
+			font-weight: bold;
+			padding-left: 3em;  padding-right: 3em;
+			padding-top: .5em;  padding-bottom: .5em;
+			border: 0;  margin: 0;
+			height: auto;   width: auto;
+			z-index: 999999999; /* or whatever is needed to show on top of other elements */
+			font-size:2em;
+		}
+		@media only screen and (min-width: 320px) and (max-width: 991px) {
+			#offer {
+				right: unset;
+				left: -3em;
+				transform: rotate(-45deg);
+			}
+		}
+		#offer::before {
+			content: "20% Discount*";
+		}
+	</style>
+	<!-- End discount banner -->
+
+	<!-- Footer 
+		============================================= -->
+	<footer id="footer" class="footer footer-5">
+		<!-- Copyrights
+			============================================= -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="footer--copyright">
+						<span>&copy; 2023 UniFiCentral</span><br />
+					</div>
+					<span>UniFiCentral is a trading name of Unified Technical Solutions Ltd. Company No: 08974291</span>
+				</div><!-- .col-md-6 end -->
+
+			</div><!-- .row end -->
+		</div>
+		<!-- .container end -->
+	</footer>
+
+	<!-- #wrapper end -->
+
+	<!-- Footer Scripts
 ============================================= -->
-		<script src="assets/js/jquery-2.2.4.min.js"></script>
-		<script src="assets/js/plugins.js"></script>
-		<script src="assets/js/functions.js"></script>
+	<script src="assets/js/jquery-2.2.4.min.js"></script>
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/functions.js"></script>
 </body>
 
 </html>
